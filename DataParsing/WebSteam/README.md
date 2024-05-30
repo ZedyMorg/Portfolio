@@ -1,9 +1,9 @@
 # Data parsing on Steam API and steam community website
 
-The goal of this project is to collect data regarding the strenghts of each civilization from the guides on Civilization VI made by Zigzagzigal (a user on Steam). 
+**The goal of this project is to collect data regarding the strenghts of each civilization from the guides on Civilization VI made by Zigzagzigal (a user on Steam).** 
 
 ## 1. "Victory Skew" score
-We first parsed the "Victory Skew" score for each civilization with a guide (The "Dataparsing on Guides.ipynd" file).
+**We first parsed the "Victory Skew" score for each civilization with a guide (The "Dataparsing on Guides.ipynd" file).**
 
   - The "Victory Skew" score is defined as such : "The civ is subjectively graded based on how much it leans towards a specific victory type - not how powerful it is. Scores of 3 or more mean the civ has at least a minor advantage towards the victory route."
 
@@ -12,7 +12,7 @@ After parsing all the guides for the information on victory skew, we created a d
 We had to customize our "for" loop, since the data was not always consistent. Before an update (GS) there were only 4 possible victory type and the names were not always consistent.
 
 ## 2. Steam acheivements
-Once we had our "guides" dataset, we parsed throught Steam APIs to get information on acheivements related to having a win with the leaders (Scrape Steam acheivements info.ipynb file).
+**Once we had our "guides" dataset, we parsed throught Steam APIs to get information on acheivements related to having a win with the leaders (Scrape Steam acheivements info.ipynb file).**
 
 To access Steam's API, a Steam API key is needed, and steam's policy is to keep that key personal, that is why we hid marked it as XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX in our public file. 
 
@@ -21,6 +21,8 @@ We first accessed all acheivements for a specific steam ID (In this case, me), t
 We then joined our previous dataset "guides" with this new dataset while fixing inconsistencies on the names of some leaders to create our full dataset (guide_with_achievements.csv) in which we have the data regarding the completion of the acheivement or not.
 
 ## 3. Visualizing our results
-Our last step was to add a UI to make it easier to filter what kind of civilization the user wants to play based on the scores (Display files.ipynb). We also color coded the strongest scores, but unfortunately the Seaborn library is not showing in GitHub.
+**Our last step was to add a UI to make it easier to filter what kind of civilization the user wants to play based on the scores (Display files.ipynb).**
+
+We also color coded the strongest scores, but unfortunately the Seaborn library is not showing in GitHub.
 
 6 leaders at the end of our dataframe (Julius Caesar, Tokugawa, Yongle, Ludwig II, Theodora and Elizabeth I) have None values because there were no guides made for those yet. We still left them in our dataframe because it is still possible to get acheivements for those.
